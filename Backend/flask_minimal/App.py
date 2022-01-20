@@ -97,8 +97,8 @@ def put_post():
     record = request.get_json()
     post_id = record['Post_ID']
     db = client.DBS.post
-    db.update({"Post_ID":post_id},{"$set":record})
-    return "Post inserted"
+    db.update_one({"Post_ID":post_id},{"$set":record})
+    return "Post updated"
 
 #[6]
 #{"Post_ID":1}
@@ -106,7 +106,10 @@ def put_post():
 def delete_post():
     record = request.get_json()
     db = client.DBS.post
-    db.delete_one({"Post_ID":record["Post_ID"]})
+    try:
+        db.delete_one({"Post_ID":record["Post_ID"]})
+    except:
+        return "Does not exist in database!"
     return "Post deleted"
 
 
