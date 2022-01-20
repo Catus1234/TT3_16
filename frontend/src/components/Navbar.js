@@ -11,7 +11,7 @@ export default function Navbar() {
                 <h2 className="navbar--proj">DBS SEED</h2>
                 <h3 className="navbar--home" onClick={() => {navigate("/home")}}>Home</h3>
                 <h3 className="navbar--profile" onClick={() => {navigate("/profile")}}>Profile</h3>
-                <h3 className="navbar--logout">Logout</h3>
+                <h3 className="navbar--logout" onClick={() => {navigate("/")}}>Logout</h3>
             </div>
         </nav>
         

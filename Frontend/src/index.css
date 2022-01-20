@@ -50,6 +50,10 @@ nav {
   color:white;
 }
 
+.navbar--logout:hover{
+  cursor: pointer;
+}
+
 .main--container{
   width: 80%;
   margin: 0px auto;
