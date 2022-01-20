@@ -60,8 +60,7 @@ def get_posts():
         dic = {}
         count = 1
         for i in posts:
-            print(i)
-            dic[count] = i
+            dic[count] = {"Post_ID":i["Post_ID"],"Post_Title":i["Post_Title"],"Post_Description":i['Post_Description'],"Post_image":i['Post_image'],"User_ID":i['User_ID']}
             count += 1
         return jsonify(dic)
     else:
@@ -71,9 +70,8 @@ def get_posts():
         dic = {}
         count = 1
         for i in posts:
-            dic[count] = i
+            dic[count] = {"Post_ID":i["Post_ID"],"Post_Title":i["Post_Title"],"Post_Description":i['Post_Description'],"Post_image":i['Post_image'],"User_ID":i['User_ID']}
             count += 1
-        print(dic)
         return dic
 
 
