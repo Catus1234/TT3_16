@@ -67,7 +67,7 @@ export default function Post(props, setPostsObject) {
       </div>
       }
       {showUpdateForm ? <div></div> : <div className='post--setting'>
-        {setting}
+        {!props.hidden ? setting : ""}
         {menu}
       </div>}
 
