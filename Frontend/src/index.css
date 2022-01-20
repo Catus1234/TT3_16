@@ -23,7 +23,7 @@ nav {
   padding: 0px 20px;
   color:white;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 .navbar--home{
@@ -53,16 +53,17 @@ nav {
 .main--container{
   width: 80%;
   margin: 0px auto;
+  background-color: #eeeeee;
 }
 
 .post--container{
-  width: 40%;
-  min-height: 250px;
+  width: 80%;
   background-color: transparent;
   margin: 10px auto;
   display: flex;
   border: 2px solid black;
   border-radius: 10px;
+  position: relative;
 }
 
 .post--image{
@@ -75,6 +76,8 @@ nav {
   flex-direction: column;
   padding: 20px;
   margin: 0px 30px;
+  width: 100%;
+
 }
 
 .post--title{
@@ -86,6 +89,47 @@ nav {
 }
 
 .post--imagecontainer{
-  width: 30%;
+  width: 40%;
   justify-content: center;
+}
+
+.post--setting{
+  position:absolute;
+  right: 10px;
+  top: 10px;
+  float: left;
+}
+
+.post--setting:hover .dropdown{
+  display:block;
+}
+
+.dropdown{
+  position:absolute;
+  display: none;
+  right: 0px;
+  width: 100px;
+  flex-direction: column;
+  background-color: #eeeeee;
+  border: 1px solid black;
+}
+
+.dropdown > div:hover{
+  background-color: #5c5c5c;
+  color: white;
+  cursor: pointer;
+}
+
+.main--posts{
+  width:80%;
+  margin: 10px auto;
+  text-align: center;
+
+}
+
+.main--postpost{
+  width:80%;
+  margin: 10px auto;
+  text-align: center;
+
 }
