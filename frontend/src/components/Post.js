@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 
-export default function Post(props) {
+export default function Post(props, setPostsObject) {
 
   const [showUpdateForm, toggleUpdate] = useState(false)
+
+  const [newPostTitle, setNewPostTitle] = useState(null)
+  const [newPostDescription, setNewPostDescription] = useState(null)
+  const [newPostImage, setNewPostImage] = useState(null)
+
 
   const setting = <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -15,8 +20,31 @@ export default function Post(props) {
     <div onClick={(e) => toggleUpdate(true)}>Update Post</div>
   </div>
 
-  function updatePost() {
+  function updatePost(id, oldPost) {
     toggleUpdate(false)
+
+    console.log(newPostTitle)
+
+    if(newPostTitle){
+      setNewPostTitle(oldPost.Post_Title)
+    }
+
+    if(newPostDescription){
+      setNewPostDescription(oldPost.Post_Title)
+    }
+
+    if(newPostImage){
+      setNewPostImage(oldPost.Post_image)
+    }
+
+    var newPost = {
+      "Post_Title": newPostTitle,
+      "Post_Description": newPostDescription,
+      "Post_Image": newPostTitle,
+    }
+
+    console.log(newPost)
+    // setPostsObject(id)
   }
 
   return (
@@ -26,10 +54,13 @@ export default function Post(props) {
         <div className="post--imagecontainer">
           <img className="post--image" src={props.post.Post_image} /></div>}
       {showUpdateForm ? <div className="post--innertext">
-        <label><strong>Post Title: </strong></label><input className="post--update-post-input" type="text" value={props.post.Post_Title}></input>
-        <label><strong>Post Description:</strong> </label><textarea className="post--update-post-textarea" type="text">{props.post.Post_Description}</textarea>
-        <label><strong>Image URL:</strong> </label><input className="post--update-post-input" type="text" value={props.post.Post_image}></input>
-        <button className="post--update-post-button" onClick={updatePost}>Update</button>
+        <label><strong>Post Title: </strong></label>
+        <input className="post--update-post-input" type="text" defaultValue={props.post.Post_Title} onChange={(e) => setNewPostTitle(e.target.value)}></input>
+        <label><strong>Post Description:</strong> </label>
+        <textarea className="post--update-post-textarea" type="text" defaultValue={props.post.Post_Description} onChange={(e) => setNewPostDescription(e.target.value)}></textarea>
+        <label><strong>Image URL:</strong> </label>
+        <input className="post--update-post-input" type="text" defaultValue={props.post.Post_image} onChange={(e) => setNewPostImage(e.target.value)}></input>
+        <button className="post--update-post-button" onClick={() => updatePost(props.post.Post_ID , props.post)}>Update</button>
       </div> : <div className="post--innertext">
         <h2 className="post--title">{props.post.Post_Title}</h2>
         <h4 className="post--description">{props.post.Post_Description}</h4>

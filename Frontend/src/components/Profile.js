@@ -59,16 +59,16 @@ export default function Profile() {
   })
 
   //use effect to get all post when loaded
-  React.useEffect(async ()=> {
-    try{
-      const res = await fetch("http://127.0.0.1:5000/")
-      const data = await res.json()
-      //setPosts(data)
-      console.log(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }, [])
+  // React.useEffect(async ()=> {
+  //   try{
+  //     const res = await fetch("http://127.0.0.1:5000/")
+  //     const data = await res.json()
+  //     //setPosts(data)
+  //     console.log(data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }, [])
 
 
   return (
