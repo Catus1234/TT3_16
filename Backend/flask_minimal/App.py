@@ -60,8 +60,7 @@ def get_posts():
         dic = {}
         count = 1
         for i in posts:
-            print(i)
-            dic[count] = i
+            dic[count] = {"Post_ID":i["Post_ID"],"Post_Title":i["Post_Title"],"Post_Description":i['Post_Description'],"Post_image":i['Post_image'],"User_ID":i['User_ID']}
             count += 1
         return jsonify(dic)
     else:
@@ -71,9 +70,8 @@ def get_posts():
         dic = {}
         count = 1
         for i in posts:
-            dic[count] = i
+            dic[count] = {"Post_ID":i["Post_ID"],"Post_Title":i["Post_Title"],"Post_Description":i['Post_Description'],"Post_image":i['Post_image'],"User_ID":i['User_ID']}
             count += 1
-        print(dic)
         return dic
 
 
@@ -88,7 +86,7 @@ def create_post():
     last_post = db.find_one(sort=[("Post_ID", -1)])
     last_post = last_post["Post_ID"]
     record["Post_ID"] = last_post+1
-    db.insert(record)
+    db.insert_one(record)
     return "Updated"
 
 #[5]
@@ -99,8 +97,8 @@ def put_post():
     record = request.get_json()
     post_id = record['Post_ID']
     db = client.DBS.post
-    db.update({"Post_ID":post_id},{"$set":record})
-    return "Post inserted"
+    db.update_one({"Post_ID":post_id},{"$set":record})
+    return "Post updated"
 
 #[6]
 #{"Post_ID":1}
@@ -108,7 +106,10 @@ def put_post():
 def delete_post():
     record = request.get_json()
     db = client.DBS.post
-    db.delete_one({"Post_ID":record["Post_ID"]})
+    try:
+        db.delete_one({"Post_ID":record["Post_ID"]})
+    except:
+        return "Does not exist in database!"
     return "Post deleted"
 
 
