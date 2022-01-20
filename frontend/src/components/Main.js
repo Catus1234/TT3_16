@@ -25,7 +25,7 @@ export default function Main() {
       Post_Title: "New Friend",
       Post_Description: "Happy times",
       Post_image:
-        "https://preview.redd.it/21ghjyhnjmb81.gif?width=960&format=mp4&s=69ae3f05ee59793703165d1b726159dcc1205f1f",
+        "https://preview.redd.it/7m3h2v230qb81.jpg?width=640&crop=smart&auto=webp&s=9a6617330a192b1801c1af857233b28608d48b19",
     },
     {
       Post_ID: 4,
