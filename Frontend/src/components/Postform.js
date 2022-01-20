@@ -16,39 +16,44 @@ export default function Postform() {
   }
 
   function handleSubmit() {}
-
+  const [show, setShow] = useState(false);
   return (
     <div>
-        <button className="postform--button">Post your story!</button>
+      <div className="button">
+        <button onClick={() => setShow(!show)}>
+          {show ? "Cancel" : "Add Post"}
+        </button>
+      </div>
+      {show && (
         <form className="Postform">
-            Title
-            <input
-                type="text"
-                name="postTitle"
-                onChange={handleChange}
-                value={formData.postTitle}
-                placeholder="Title"
-            />
-            Description
-            <textarea
-                className="inputtextarea"
-                type="textarea"
-                name="postDescription"
-                onChange={handleChange}
-                value={formData.postDescription}
-            />
-            Image
-            <input
-                type="text"
-                name="postImg"
-                onChange={handleChange}
-                value={formData.postImg}
-            />
-
-            <button className="button" type="submit">
-                Submit
-            </button>
+          Title
+          <input
+            type="text"
+            name="postTitle"
+            onChange={handleChange}
+            value={formData.postTitle}
+            placeholder="Title"
+          />
+          Description
+          <textarea
+            className="inputtextarea"
+            type="textarea"
+            name="postDescription"
+            onChange={handleChange}
+            value={formData.postDescription}
+          />
+          Image
+          <input
+            type="text"
+            name="postImg"
+            onChange={handleChange}
+            value={formData.postImg}
+          />
+          <button className="button" type="submit">
+            Submit
+          </button>
         </form>
+      )}
     </div>
   );
 }
