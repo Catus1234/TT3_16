@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Post(props, po, onDelete, onToggle) {
+export default function Post(props, Post_ID, onDelete, onToggle) {
   const setting = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +20,15 @@ export default function Post(props, po, onDelete, onToggle) {
     </svg>
   );
 
+  function deletePost() {
+    Post_ID.map((po, index) => (
+      <po key={index} po={po} onDelete={onDelete} onToggle={onToggle} />
+    ));
+  }
+
   const menu = (
     <div className="dropdown">
-      <div>Delete Post</div>
+      <div onClick={deletePost()}>Delete Post</div>
       <div>Update Post</div>
     </div>
   );
