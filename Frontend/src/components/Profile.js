@@ -53,7 +53,7 @@ export default function Profile() {
   const postElements = userPosts.map(post => {
       return (
         <>
-          <Post key={post.User_ID} post={post}/>
+          <Post key={post.User_ID} post={post} />
         </>
       )
   })
@@ -75,7 +75,9 @@ export default function Profile() {
     <div className="homepage--container">
       <Navbar />
       <div className='main--container'>
-        <h3>My Posts</h3>
+        <div className='profile--header'>
+          <h3>My Posts</h3>
+        </div>
         <hr />
         {postElements}
         <br></br>

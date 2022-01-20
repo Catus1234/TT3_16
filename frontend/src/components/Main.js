@@ -45,7 +45,7 @@ export default function Main() {
   const postElements = posts.map((post) => {
     return (
       <>
-        <Post post={post} />
+        <Post post={post} hidden={true} key={post.Post_ID} />
       </>
     );
   });
