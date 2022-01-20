@@ -1,7 +1,6 @@
 import React from 'react';
 import Post from './Post';
 import Postform from './Postform'
-import Navbar from './Navbar';
 
 export default function Main() {
     const [posts, setPost] = React.useState([{
