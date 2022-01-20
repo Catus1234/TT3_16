@@ -41,4 +41,42 @@ nav {
   color:white;
 }
 
+.main--container{
+  width: 80%;
+  margin: 0px auto;
+}
 
+.post--container{
+  width: 40%;
+  min-height: 250px;
+  background-color: transparent;
+  margin: 10px auto;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.post--image{
+  width: 100%;
+  margin: 20px;
+}
+
+.post--innertext{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0px 30px;
+}
+
+.post--title{
+  text-align: left;
+}
+
+.post--description{
+  text-align: left;
+}
+
+.post--imagecontainer{
+  width: 30%;
+  justify-content: center;
+}
