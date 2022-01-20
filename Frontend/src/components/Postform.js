@@ -19,7 +19,7 @@ export default function Postform() {
 
   return (
     <div>
-        <button>Post your story!</button>
+        <button className="postform--button">Post your story!</button>
         <form className="Postform">
             Title
             <input
