@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Post from './Post';
-import Postform from './Postform'
+import Postform from './Postform';
 import Navbar from './Navbar'
 
-export default function Main() {
+export default function Profile() {
+
   const [posts, setPost] = React.useState([{
     "Post_ID": 1,
     "User_ID": 1,
@@ -52,7 +53,7 @@ export default function Main() {
   const postElements = userPosts.map(post => {
       return (
         <>
-          <Post key={post.User_ID} post={post} />
+          <Post key={post.User_ID} post={post}/>
         </>
       )
   })
@@ -74,16 +75,12 @@ export default function Main() {
     <div className="homepage--container">
       <Navbar />
       <div className='main--container'>
-        <h3>Share your story!</h3>
-        <hr />
-        <Postform />
         <h3>My Posts</h3>
         <hr />
         {postElements}
         <br></br>
         <br></br>
       </div>
-
     </div>
   );
 }
