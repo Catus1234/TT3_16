@@ -2,23 +2,24 @@ from flask import Flask, json
 from flask import jsonify
 from flask import request
 from pymongo import MongoClient
-from routes import app,client
+
+app = Flask(__name__)
+client = MongoClient('mongodb+srv://dbsseedtt316:qqq111qqq111@dbsseed.mjafm.mongodb.net/DBS?retryWrites=true&w=majority')
+
 
 #not needed
 @app.route('/', methods=['GET'])
 def hello_world():
     return {'message' : 'Hello, World!'}
 
-
+#[1]
 #authentication
 #input - {"Email":"Brose","Password":brose123}
 @app.route('/DBS/user', methods=['GET'])
 def getPassword():
     db = client.DBS.user
     user_details = request.get_json()
-    print(user_details)
     details = db.find_one({"Email":user_details['Email']})
-    print(details)
     if user_details["Password"] == details["Password"]:
         return {"User_ID":details['User_ID']}
     else:
