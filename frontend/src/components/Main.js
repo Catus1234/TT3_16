@@ -11,7 +11,7 @@ export default function Main() {
       Post_Description:
         "Walking up and down the aisles for what seems like hours.",
       Post_image:
-        "https://preview.redd.it/jjvqtw9iapb81.gif?format=mp4&s=e333e78478df813b5b18ecd0905efc8b00ae210c",
+        "https://i.redd.it/491l4somvtb81.jpg",
     },
     {
       Post_ID: 2,
