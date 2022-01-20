@@ -41,6 +41,10 @@ export default function Main() {
       )})
   return (
       <div className="main--container">
+        <Navbar />
+        <h3>Share your story!</h3>
+        <hr />
+        <Postform/>
         <h3>See what people are up to!</h3>
         <hr/>
             {postElements}

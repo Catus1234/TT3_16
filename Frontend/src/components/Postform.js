@@ -16,13 +16,17 @@ export default function Postform(){
         }))
     }
 
+    function handleSubmit(){
+        
+    }
+
     return(
         <div>
         <form>
         <label>
-            <input type = "text" name ="Title of your post" handleChange={handleChange}/> 
-            <input type = "textarea" name ="Write your post"/> 
-            <input type = "image" name = "Upload image"/>
+            <input type = "text" name ="postTitle" onChange={handleChange} value={formData.postTitle}/> 
+            <input type = "textarea" name ="postDescription" onChange={handleChange} value={formData.postDescription}/> 
+            <input type = "image" name = "postImg" onChange={handleChange} value={formData.postImg}/>
             </label>
             <button type = "submit">Submit</button>
         </form>
