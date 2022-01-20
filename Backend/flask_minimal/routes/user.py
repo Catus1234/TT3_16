@@ -2,10 +2,7 @@ from flask import Flask, json
 from flask import jsonify
 from flask import request
 from pymongo import MongoClient
-
-app = Flask(__name__)
-
-client = MongoClient('mongodb://127.0.0.1:27017')
+from routes import app,client
 
 #not needed
 @app.route('/', methods=['GET'])

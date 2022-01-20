@@ -1,12 +1,14 @@
 import json
 from flask import Flask, jsonify, request
+from pymongo import MongoClient
+from routes import app,client
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
 
 
-with open("Data/POST.json", "r") as myfile:
+with open("POST.json", "r") as myfile:
     data = myfile.read()
 posts = json.loads(data)
 
