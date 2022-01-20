@@ -90,7 +90,7 @@ function Login() {
                 <div className="form-row">
                     <div className="login-form-label">Password</div>
                     <input type="password" placeholder="Enter your password" className="login-input-field" autoComplete="off"
-                        onChange={(e) => setPassword(e.target.value)} required ></input><br></br>
+                        onChange={(e) => setPassword(e.target.value)} required ></input>
                     <div className="login-error-message">{PasswordErrorMessage}</div>
                 </div>
                 <button type="button" className="login-submit-button" onClick={validateLogin}>Submit</button>
