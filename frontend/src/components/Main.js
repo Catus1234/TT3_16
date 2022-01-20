@@ -50,14 +50,14 @@ export default function Main() {
     );
   });
   return (
-    <div className="main--container">
-      <Navbar />
-      <h3>Share your story!</h3>
-      <hr />
-      <Postform />
-      <h3>See what people are up to!</h3>
-      <hr />
-      {postElements}
-    </div>
+
+      <div className="main--container">
+        <h3 className='main--postpost'>Share your story!</h3>
+        <hr/>
+        <Postform/>
+        <h3 className='main--posts'>See what people are up to!</h3>
+        <hr/>
+            {postElements}
+      </div>
   );
 }
