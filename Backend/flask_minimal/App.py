@@ -77,7 +77,7 @@ def get_posts():
 
 #[3]
 # insert post to post table
-#{"User_ID":1,"Post_Title":"New Job","Post_Description":"Finished work","Post_Image":"https://preview.redd.it/op4nak4pvpb81.jpg?width=640&crop=smart&auto=webp&s=615dce736df9a82ae1e2136727e440a863a1ffbe"}
+#{"User_ID":1,"Post_Title":"New Job","Post_Description":"Finished work","Post_image":"https://preview.redd.it/op4nak4pvpb81.jpg?width=640&crop=smart&auto=webp&s=615dce736df9a82ae1e2136727e440a863a1ffbe"}
 @app.route("/DBS/post", methods=["POST"])
 def create_post():
     record = request.get_json()
@@ -91,7 +91,7 @@ def create_post():
 
 #[5]
 #update user's post
-#{"Post_ID":1,"User_ID":1,"Post_Title":"New Job","Post_Description":"Finished work","Post_Image":"https://preview.redd.it/op4nak4pvpb81.jpg?width=640&crop=smart&auto=webp&s=615dce736df9a82ae1e2136727e440a863a1ffbe"}
+#{"Post_ID":1,"User_ID":1,"Post_Title":"New Job","Post_Description":"Finished work","Post_image":"https://preview.redd.it/op4nak4pvpb81.jpg?width=640&crop=smart&auto=webp&s=615dce736df9a82ae1e2136727e440a863a1ffbe"}
 @app.route("/DBS/post", methods=["PUT"])
 def put_post():
     record = request.get_json()
