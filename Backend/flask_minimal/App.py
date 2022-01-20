@@ -86,7 +86,7 @@ def create_post():
     last_post = db.find_one(sort=[("Post_ID", -1)])
     last_post = last_post["Post_ID"]
     record["Post_ID"] = last_post+1
-    db.insert(record)
+    db.insert_one(record)
     return "Updated"
 
 #[5]
