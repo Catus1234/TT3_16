@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Post from './Post';
+import Postform from './Postform';
 import Navbar from './Navbar'
 
 export default function Profile() {
@@ -57,12 +58,36 @@ export default function Profile() {
       )
   })
 
+  //use effect to get all post when loaded
+  React.useEffect(async ()=> {
+    try{
+      const res = await fetch("http://127.0.0.1:5000/")
+      const data = await res.json()
+      //setPosts(data)
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }, [])
+
+
   return (
-    <div className="main--container">
+    <div className="homepage--container">
       <Navbar />
       <h3>My Posts</h3>
       <hr />
       {postElements}
+      <div className='main--container'>
+        <h3>Share your story!</h3>
+        <hr />
+        <Postform />
+        <h3>My Posts</h3>
+        <hr />
+        {postElements}
+        <br></br>
+        <br></br>
+      </div>
+
     </div>
   );
 }
