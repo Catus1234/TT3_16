@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Main from './components/Main'
-import Homepage from './components/Homepage';
-
+import Profile from './components/Profile'
 import Login from './components/Login';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,7 +11,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/home' element={<Homepage />} />
+        <Route path='/home' element={<Main />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </Router>
   );
