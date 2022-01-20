@@ -31,9 +31,18 @@ nav {
   color:white;
 }
 
+.navbar--home:hover{
+ cursor: pointer;
+}
+
+
 .navbar--profile{
   margin-left: 30px;
   color:white;
+}
+
+.navbar--profile:hover{
+  cursor: pointer;
 }
 
 .navbar--logout{
