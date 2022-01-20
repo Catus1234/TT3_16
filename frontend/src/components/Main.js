@@ -1,5 +1,7 @@
 import React from 'react';
 import Post from './Post';
+import Postform from './Postform'
+import Navbar from './Navbar';
 
 export default function Main() {
     const [posts, setPost] = React.useState([{
@@ -40,6 +42,10 @@ export default function Main() {
       )})
   return (
       <div className="main--container">
+        <Navbar />
+        <h3>Share your story!</h3>
+        <hr />
+        <Postform/>
         <h3>See what people are up to!</h3>
         <hr/>
             {postElements}
