@@ -1,8 +1,13 @@
 Minimal Flask App
 =================
-
 Basic template to develop an API with Flask, Flask-RESTful and
 Flask-RESTful-Swagger
+
+Enbironmental Variables
+-----
+Create a `.env` file, and add in MONGOURI
+
+
 
 Usage
 -----

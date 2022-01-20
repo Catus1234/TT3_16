@@ -2,12 +2,16 @@ from flask import Flask, json
 from flask import jsonify
 from flask import request
 from pymongo import MongoClient
+
+import os
 from routes import app,client
+
+
 
 #not needed
 @app.route('/', methods=['GET'])
 def hello_world():
-    return {'message' : 'Hello, World!'}
+    return jsonify({'message': 'Hello, World!'})
 
 
 #authentication
@@ -20,9 +24,9 @@ def getPassword():
     details = db.find_one({"Email":user_details['Email']})
     print(details)
     if user_details["Password"] == details["Password"]:
-        return {"User_ID":details['User_ID']}
+        return jsonify({"User_ID":details['User_ID']})
     else:
-        return "Incorrect username or password!"
+        return jsonify({'msg': "Incorrect username or password!"})
 
 #get table names
 #not needed
