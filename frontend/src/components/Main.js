@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from './Post';
-import Postform from './Postform.js'
+import Postform from './Postform'
 
 export default function Main() {
     const [posts, setPost] = React.useState([{
