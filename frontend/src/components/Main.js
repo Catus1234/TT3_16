@@ -41,7 +41,7 @@ export default function Main() {
       )})
   return (
       <div className="main--container">
-        <h2>See what people are up to!</h2>
+        <h3>See what people are up to!</h3>
         <hr/>
             {postElements}
       </div>
