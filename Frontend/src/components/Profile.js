@@ -74,20 +74,13 @@ export default function Profile() {
   return (
     <div className="homepage--container">
       <Navbar />
-      <h3>My Posts</h3>
-      <hr />
-      {postElements}
       <div className='main--container'>
-        <h3>Share your story!</h3>
-        <hr />
-        <Postform />
         <h3>My Posts</h3>
         <hr />
         {postElements}
         <br></br>
         <br></br>
       </div>
-
     </div>
   );
 }
