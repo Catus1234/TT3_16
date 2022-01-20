@@ -38,7 +38,7 @@ export default function Postform() {
           />
           <p>Image:</p>
           <input
-            type="textarea"
+            type="text"
             name="postImg"
             onChange={handleChange}
             value={formData.postImg}
